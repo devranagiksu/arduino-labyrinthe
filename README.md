@@ -1,81 +1,67 @@
-# 🎮 Arduino Labyrinth (Joystick Control)
+# 🎮 Arduino Marble Maze Labyrinth
 
-## 📐 STL / CAD Files
-👉 Contact: devranagiksu@gmail.com  
-
----
-
-## 🎯 Description
-This project is a **physical labyrinth controlled by a joystick**.  
-Two servos tilt the platform so a ball can move through the maze.
-
-- Joystick X/Y → Servo X/Y (platform tilt)  
-- Ball → moves inside the maze  
-- Neutral position → flat platform  
-
-### Use cases
-- 🎮 Game  
-- 🏆 Competition / Olympiads project  
-- 🎓 Engineering (SI) project  
+Projet Arduino consistant à créer un labyrinthe physique contrôlé par un joystick.  
+Le joueur doit guider une bille jusqu’à la sortie sans tomber dans les obstacles en inclinant le plateau.
 
 ---
 
-## 🛠️ Hardware
-- Arduino Uno  
-- 2x Servo motors (SG90 or MG90S recommended)  
-- 1x Analog joystick (A0, A1)  
-- Breadboard + wires  
-- 3D printed labyrinth  
-- Ball (steel or plastic)  
+## 📌 Objectif du projet
+
+- Concevoir un jeu interactif physique  
+- Contrôler un système mécanique avec Arduino  
+- Piloter deux axes (X et Y) à l’aide de servomoteurs  
+- Exploiter des entrées analogiques avec un joystick  
 
 ---
 
-## 📚 Libraries
-- `Servo.h` (built-in)
-- `Wire.h` (I2C LCD)
-- `EEPROM.h` (sauvegarde calibration)
+## 🧰 Matériel nécessaire
 
+### 🔌 Composants électroniques
+- Arduino UNO  
+- 2 × servomoteurs SG90  
+- 1 × module joystick  
+- 1 × breadboard  
+- Câbles de connexion  
 
----
-
-## 🔌 Wiring
-| Component | Pin |
-|----------|-----|
-| Servo X  | 8   |
-| Servo Y  | 9   |
-| Joystick X | A0 |
-| Joystick Y | A1 |
-| VCC | 5V |
-| GND | GND |
+### 🛠️ Matériel de fabrication
+- Carton (≈ 3 mm d’épaisseur)  
+- Pistolet à colle chaude  
+- Cutter / couteau  
+- Règle  
+- Crayon  
 
 ---
 
-## 🚀 Installation
-1. Connect all components  
-2. Upload the Arduino code  
-3. Power the circuit  
-4. Adjust servo center positions if needed  
+## 📚 Bibliothèques utilisées
+
+- Servo.h (contrôle des servomoteurs)  
 
 ---
 
-## 🎮 Controls
-- Left / Right → Tilt X axis  
-- Forward / Backward → Tilt Y axis  
+## ⚙️ Fonctionnement
+
+Le joystick permet de contrôler l’inclinaison du plateau selon deux axes :
+- Axe X : mouvement gauche / droite  
+- Axe Y : mouvement avant / arrière  
+
+Les servomoteurs ajustent l’angle du plateau en temps réel en fonction des positions du joystick.
 
 ---
 
-## 🧠 Logic
-- Reads joystick values (0–1023)  
-- Converts to movement  
-- Uses a deadzone to avoid noise  
-- Limits servo angles for safety  
+## 🏗️ Construction
+
+1. Découper une base en carton  
+2. Installer les supports mécaniques  
+3. Fixer les servomoteurs  
+4. Créer le labyrinthe avec des parois  
+5. Assembler l’ensemble avec de la colle chaude  
 
 ---
 
-## ⚙️ Configuration
-```cpp
-int range = 12;        // Sensitivity
-int threshold = 3;     // Deadzone
-int ServoXHomePos = 103;
-int ServoYHomePos = 134;
-int maxTilt = 20;      // Max tilt
+## 🚀 Améliorations possibles
+
+- Ajouter un buzzer pour signaler la victoire 🔊  
+- Ajouter des LED pour un retour visuel 💡  
+- Ajouter des capteurs de position 🎯  
+- Implémenter un contrôle Bluetooth 📱  
+
